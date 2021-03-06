@@ -1,15 +1,10 @@
 #define _PRUEBA
-static char *productos[]= {"BMW ", "AUDI", "CHEVROLET", "MAZDA", "FERRARI"};  //crea un arreglo estatico
+static char *productos[]= {"BMW", "AUDI", "CHEVROLET", "MAZDA", "FERRARI"};  //crea un arreglo estatico
 
 
-/*int numeros[3][5]= {{100, 150, 20, 90, 199},                                //Disponibilidad
-                    {550000, 650000, 225000, 350000, 2500000},                           //Precio
-                    {0, 0, 0, 0, 0}};                                       //Productos en Carro
-*/
-
-int numeros[15]= {100, 150, 20, 90, 199,                                //Disponibilidad
-                    550000, 650000, 225000, 350000, 2500000,                           //Precio
-                    0, 0, 0, 0, 0};
+int numeros[15]= {100, 150, 20, 90, 199,                                //Stock
+                    0, 0, 0, 0, 0,                                      //Carrito
+                    550000, 650000, 225000, 350000, 2500000};           //Precio
 
 
 #ifdef _PRUEBA
@@ -23,13 +18,16 @@ int numeros[15]= {100, 150, 20, 90, 199,                                //Dispon
     #include "eliminarProductos.c"
     #include "mostrarCarrito.c"
     #include "menu.c"
+    //#include "regresar.c"
     
-    
-    void mostrarCarrito(char **, int *);
     void mostrar(char **, int *);
     void agregar(char **, int *);
+    void mostrarCarrito(char **, int *);
+    
     void eliminar(char **, int *);
     void menu();
+    
+    
     
     
 
