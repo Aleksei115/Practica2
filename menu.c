@@ -2,7 +2,8 @@
 
 
 void menu(){
-
+    system("clear");
+    
     printf("\n\t\tBienvenido al Outlet de automóviles \nTenemos desde la marca más económica hasta la que realmente deseas.\n");
 
     int opcion = 10;

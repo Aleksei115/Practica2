@@ -20,7 +20,7 @@ int numeros[15]= {100, 150, 20, 90, 199,                                //Stock
     #include "menu.c"
     //#include "regresar.c"
     
-    void mostrar(char **, int *);
+    int mostrar(char **, int *);
     void agregar(char **, int *);
     void mostrarCarrito(char **, int *);
     
