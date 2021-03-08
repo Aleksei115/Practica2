@@ -1,84 +1,83 @@
 void menu();
-void regresar();
+void regresar(int);                 //para eliminar declaracion implicita
+void comprar(int,int);
+
 
 void agregar(char **matriz_productos, int *matriz_numeros){
-
+    
+    int num_opcion  , cantidad;
     
     mostrar(productos,numeros);
-    //system("clear");
 
-    int num_opcion, cantidad;
-    do
-    {
+    printf("Introduce la opcion que deseas: ");
+    
+    int comprobacion = scanf(" %d",&num_opcion);
+
+    while (comprobacion == 1 && cantidad > 0 && num_opcion <= 5 ){
 
         switch (num_opcion)
         {
             case 0:
-                printf("\nIntroduce el número de carros que deseas: ");
-
-                if (scanf("%d",&cantidad) == 1){
-
-                    if (cantidad <= *(numeros+num_opcion))
-                    {
-                        *(numeros+num_opcion+5) = cantidad;                             //Sumo a carrito 
-
-                        *(numeros+num_opcion) = *(numeros+num_opcion) - cantidad;       //Resto a la cantidad en stock
-
-                        printf("\nSe agrego a tu carrito exitosamente!!\n");
-
-                        regresar();
-                    }
-                    else
-                        printf("\nLo sentimos no tenemos en stock\n");
-                }
-                else
-                    exit(1);
-                
+                comprar(num_opcion, cantidad);
                 break;
 
 
             case 1:
+                comprar(num_opcion, cantidad);
                 break;
 
 
             case 2:
-            
+                comprar(num_opcion, cantidad);
                 break;
 
 
             case 3:
-                
+                comprar(num_opcion, cantidad);
                 break;
 
 
             case 4:
-
+                comprar(num_opcion, cantidad);
+                break;
+            
+            case 5:
+                menu(num_opcion, cantidad);
                 break;
 
         }
         printf("Introduce la opcion que deseas: ");
-
-    } while (scanf("%d",&num_opcion) == 1 && num_opcion <= 5);
     
-
-}
-
-void regresar(){
-    int pregunta;
-
-    system("clear");
-    printf("\nDesea seguir comprando?\n");
-    printf("\n1-SI\n");
-    printf("\n2-NO\n");
-
-    if(scanf("%d",&pregunta) == 1){
-
-        if (pregunta == 1)
-            mostrar(productos,numeros);
-        if (pregunta == 2)
-            menu();
-        
     }
-        
-        
+    
+    error();
 }
+
+
+void comprar(int num_opcion, int cantidad){
+
+    printf("\nIntroduce el número de carros que deseas comprar: ");
+
+    if (scanf("%d",&cantidad) == 1 && cantidad > 0 ){
+
+        if (cantidad <= *(numeros+num_opcion)){
+            *(numeros+num_opcion+5) = cantidad;                             //Sumo a carrito 
+
+             *(numeros+num_opcion) = *(numeros+num_opcion) - cantidad;       //Resto a la cantidad en stock
+
+            printf("\nSe agrego a tu carrito exitosamente!!\n");
+            regresar(1);
+        }
+        else{
+            printf("\nLo sentimos no tenemos en stock...Por favor espera!\n\n");
+            system("sleep 1s && clear");
+            agregar(productos,numeros);
+        }
+    }
+    else
+        error();                                                            
+
+}
+
+
+

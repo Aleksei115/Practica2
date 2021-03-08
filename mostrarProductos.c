@@ -1,39 +1,22 @@
-void menu();
 
-int mostrar(char **matriz_productos, int *matriz_numeros){
 
-  int op = 1;
+void mostrar(char **matriz_productos, int *matriz_numeros){
+    printf("Si quieres regresar al menú introduce 5:");
+    printf("\n--------------------------------------------------------\n");
 
-    if(op != 0){
-        system("clear");
+    printf("\t\tAQUI ESTA EL CATÁLOGO\n\n");
+    printf("#OPCION \tMARCA    \tEN STOCK  \tPRECIO\n\n");
 
-        printf("\n--------------------------------------------------------\n");
+    //Imprime opcion,producto, disponibilidad y precio
 
-        printf("\t\tAQUI ESTA EL CATÁLOGO\n\n");
-        printf("#OPCION \tMARCA    \tEN STOCK  \tPRECIO\n\n");
-
-        //Imprime opcion,producto, disponibilidad y precio
-
-        for (int i = 0; i < 5; i++)
-        {
-            printf("%5d %15s %15d %15d$\n\n",i,*(matriz_productos+i),*(matriz_numeros+i), *(matriz_numeros+(i+10)) );
-        }
+    for (int i = 0; i < 5; i++)
+        printf("%5d %15s %15d %15d$\n\n",i,*(matriz_productos+i),*(matriz_numeros+i), *(matriz_numeros+(i+10)) );
         
-        printf("\n--------------------------------------------------------\n");
-        printf("Si quieres regresar al menu introduce 0: ");
-        scanf("%d",&op);
-    }
-    if(op == 0){
-        system("clear");
-        menu();
-    }
-    else
-        exit(1);
+    printf("\n--------------------------------------------------------\n");
+
     
+
 }
-
-
-
 
 
 

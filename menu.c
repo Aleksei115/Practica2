@@ -22,11 +22,17 @@ void menu(){
         switch (opcion)
         {
             case 1:
-                mostrar(productos,numeros);
+                system("clear");
+                mostrar(productos,numeros); 
+                printf("\nIntroduzca 5 para regresar: ");
+                if(scanf("%d",&opcion) != 1 || opcion != 5)
+                    error();
+                menu();
+                
                 break;
 
-
             case 2:
+                system("clear");
                 agregar(productos,numeros);
                 break;
 
@@ -39,7 +45,11 @@ void menu(){
 
             case 4:
                 system("clear");
-                mostrarCarrito(productos,numeros);
+                mostrarCarrito(productos, numeros);
+                printf("\nIntroduzca 5 para regresar: ");
+                if(scanf("%d",&opcion) != 1 || opcion != 5)
+                    error();
+                menu();
                 break;
 
 
@@ -53,18 +63,8 @@ void menu(){
 
     } while (scanf("%d", &opcion) == 1 && opcion <= 5 && opcion > 0);
 
-        printf("\nOpción incorrecta...\n");
-
-
+    error();
     
-    /*for (int y = 0; y < 5; y++)
-    {
-        printf("%s\n",*(matriz_productos+y));
-
-        
-    }*/
-    
-    
-    
-
 }
+
+
