@@ -6,7 +6,9 @@ void comprar(int,int);
 void agregar(char **matriz_productos, int *matriz_numeros){
     
     int num_opcion  , cantidad;
-    
+
+    fflush(stdin);
+
     mostrar(productos,numeros);
 
     printf("Introduce la opcion que deseas: ");
@@ -58,7 +60,7 @@ void comprar(int num_opcion, int cantidad){
 
     printf("\nIntroduce el número de carros que deseas comprar: ");
 
-    if (scanf("%d",&cantidad) == 1 && cantidad > 0 ){
+    if (scanf("%d",&cantidad) == 1 && cantidad >= 0 ){
 
         if (cantidad <= *(numeros+num_opcion)){
             *(numeros+num_opcion+5) = cantidad;                             //Sumo a carrito 
@@ -69,9 +71,9 @@ void comprar(int num_opcion, int cantidad){
             regresar(1);
         }
         else{
-            printf("\nLo sentimos no tenemos en stock...Por favor espera!\n\n");
-            system("sleep 1s && clear");
+            system("clear");
             agregar(productos,numeros);
+          
         }
     }
     else

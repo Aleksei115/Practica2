@@ -5,7 +5,7 @@ int numeros[15]= {100, 150, 20, 90, 199,                                //Stock
                     0, 0, 0, 0, 0,                                      //Carrito
                     550000, 650000, 225000, 350000, 2500000};           //Precio
 
-int enter;
+int total = 0;
 
 #ifdef _PRUEBA
 
@@ -13,7 +13,7 @@ int enter;
     #include <string.h>                     //Declaro librerias 
     #include <stdlib.h>
 
-    
+    #include "pagar.c"
     #include "error.c"
     #include "mostrarProductos.c"
     #include "agregarProductos.c"           //Incluyo los archivos con  las funciones
@@ -21,7 +21,9 @@ int enter;
     #include "mostrarCarrito.c"
     #include "menu.c"
     #include "regresar.c"
+    
 
+    void pagar(int*,int);
     void error();
     void mostrar(char **, int *);
     void agregar(char **, int *);
@@ -29,5 +31,7 @@ int enter;
     void eliminar(char **, int *);
     void menu();
     void regresar(int);
+    
+    
   
 #endif

@@ -47,7 +47,7 @@ void eliminar(char **matriz_productos, int *matriz_numeros){
         }
         printf("Introduce la opcion que deseas : ");
 
-    } while (scanf("%d",&num_opcion) == 1 && cantidad > 0 && num_opcion <= 5);
+    } while (scanf("%d",&num_opcion) == 1 && cantidad >= 0 && num_opcion <= 5);
     
     error();
 
@@ -60,7 +60,7 @@ void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, i
     int cantidad;
     printf("\nIntroduce el número de carros que deseas eliminar del carrito: ");
 
-    if (scanf("%d",&cantidad) == 1 && cantidad > 0 ){
+    if (scanf("%d",&cantidad) == 1 && cantidad >= 0 ){
 
         if (cantidad <= *(numeros+num_opcion+5)){
             *(numeros+num_opcion+5) =*(numeros+num_opcion+5) - cantidad;                             //Sumo a carrito 
@@ -71,8 +71,7 @@ void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, i
             regresar(2);
         }
         else{
-            printf("\nLo sentimos no tienes en elementos suficientes en tu carrito...Por favor espera!\n");
-            system("sleep 2s && clear");
+            system("sleep");
             eliminar(productos,numeros);
         }
     }

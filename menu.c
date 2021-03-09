@@ -46,10 +46,20 @@ void menu(){
             case 4:
                 system("clear");
                 mostrarCarrito(productos, numeros);
-                printf("\nIntroduzca 5 para regresar: ");
-                if(scanf("%d",&opcion) != 1 || opcion != 5)
+                printf("\nIntroduzca 5 para regresar ó 1 para comprar: ");
+                if(scanf("%d",&opcion) == 1){
+
+                    if (opcion == 5)
+                        menu();
+                    else if (opcion == 1)
+                        pagar(numeros, total);
+                    else            
+                        error();
+
+                }
+                else
                     error();
-                menu();
+         
                 break;
 
 
