@@ -4,4 +4,5 @@ void error(){
     printf("\t\t\tFatal Error!\n\nFailed to execute main.c\n\nPor favor.Siga las instrucciones...");
     printf("\n--------------------------------------------------------\n");
     exit(1);
+    
 }

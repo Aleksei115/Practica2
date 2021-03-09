@@ -5,7 +5,6 @@ void error();*/
 
 int pregunta;
 
-
 void regresar(int programa){
 
     system("clear");
