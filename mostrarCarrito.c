@@ -1,7 +1,7 @@
 
 
 
-void mostrarCarrito(char **matriz_productos, int *matriz_numeros){
+void mostrarCarrito(){
     
     printf("Si quieres regresar al menú introduce 5:");
 
@@ -13,15 +13,14 @@ void mostrarCarrito(char **matriz_productos, int *matriz_numeros){
 
     //Imprime opcion,producto, disponibilidad y precio
 
+
     for (int i = 0; i < 5; i++){
         
-        if (*(matriz_numeros+i+5) == 0)
-            i++;
-        else
-            printf("%15s %15d %15d$\n\n",*(matriz_productos+i),*(matriz_numeros+(i+5)), *(matriz_numeros+(i+10)) );
+        if (*(numeros+i+5) > 0)
+            printf("%15s %15d %15d$\n\n",*(productos+i),*(numeros+(i+5)), *(numeros+(i+10)) );
         
 
-        total = total + (*(matriz_numeros+i+5) * *(matriz_numeros+i+10));
+        total = total + (*(numeros+i+5) * *(numeros+i+10));
     }
     printf("EL TOTAL DE LA COMPRA: %d", total);
 

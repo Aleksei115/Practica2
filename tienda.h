@@ -4,8 +4,8 @@ static char *productos[]= {"BMW", "AUDI", "CHEVROLET", "MAZDA", "FERRARI"};  //c
 int numeros[15]= {100, 150, 20, 90, 199,                                //Stock
                     0, 0, 0, 0, 0,                                      //Carrito
                     550000, 650000, 225000, 350000, 2500000};           //Precio
-
 int total = 0;
+
 
 #ifdef _PRUEBA
 
@@ -23,12 +23,12 @@ int total = 0;
     #include "regresar.c"
     
 
-    void pagar(int*,int);
+    void pagar(int);
     void error();
-    void mostrar(char **, int *);
-    void agregar(char **, int *);
-    void mostrarCarrito(char **, int *);
-    void eliminar(char **, int *);
+    void mostrar();
+    void agregar();
+    void mostrarCarrito();
+    void eliminar();
     void menu();
     void regresar(int);
     

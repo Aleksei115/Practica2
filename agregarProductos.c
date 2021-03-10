@@ -3,13 +3,13 @@ void regresar(int);                 //para eliminar declaracion implicita
 void comprar(int,int);
 
 
-void agregar(char **matriz_productos, int *matriz_numeros){
+void agregar(){
     
     int num_opcion  , cantidad;
 
     fflush(stdin);
 
-    mostrar(productos,numeros);
+    mostrar();
 
     printf("Introduce la opcion que deseas: ");
     
@@ -63,16 +63,16 @@ void comprar(int num_opcion, int cantidad){
     if (scanf("%d",&cantidad) == 1 && cantidad >= 0 ){
 
         if (cantidad <= *(numeros+num_opcion)){
-            *(numeros+num_opcion+5) = cantidad;                             //Sumo a carrito 
+            *(numeros+num_opcion+5) += cantidad;                             //Sumo a carrito 
 
-             *(numeros+num_opcion) = *(numeros+num_opcion) - cantidad;       //Resto a la cantidad en stock
+             *(numeros+num_opcion) -= cantidad;       //Resto a la cantidad en stock
 
             printf("\nSe agrego a tu carrito exitosamente!!\n");
             regresar(1);
         }
         else{
             system("clear");
-            agregar(productos,numeros);
+            agregar();
           
         }
     }

@@ -1,5 +1,5 @@
 
-void pagar(int *matriz_numeros,int total){
+void pagar(int total){
 
     system("clear");
 

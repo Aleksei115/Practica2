@@ -1,4 +1,4 @@
-//char **matriz_productos, int *matriz_numeros
+
 
 
 void menu(){
@@ -66,7 +66,7 @@ void menu(){
                     if (opcion == 5)
                         menu();
                     else if (opcion == 1)
-                        pagar(numeros, total);
+                        pagar(total);
                     else            
                         error();
 

@@ -1,7 +1,3 @@
-/*void agregar(char **, int *);
-void eliminar(char **, int *);
-void menu();
-void error();*/
 
 int pregunta;
 

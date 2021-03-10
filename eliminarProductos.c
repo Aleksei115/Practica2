@@ -1,17 +1,17 @@
-void mostrarProductosAdquiridos(char **, int *);
-void eliminarProductosAdquiridos(char **, int *, int);
+void mostrarProductosAdquiridos();
+void eliminarProductosAdquiridos(int);
 void regresar(int);                            //para eliminar declaracion implicita
 
 
 
 
-void eliminar(char **matriz_productos, int *matriz_numeros){
+void eliminar(){
 
     system("clear");
 
     int num_opcion, cantidad;
 
-    mostrarProductosAdquiridos(productos,numeros);
+    mostrarProductosAdquiridos();
 
     do
     {
@@ -19,27 +19,27 @@ void eliminar(char **matriz_productos, int *matriz_numeros){
         switch (num_opcion)
         {
             case 0:
-                eliminarProductosAdquiridos(productos,numeros,num_opcion);
+                eliminarProductosAdquiridos(num_opcion);
                 break;
 
 
             case 1:
-                eliminarProductosAdquiridos(productos,numeros,num_opcion);
+                eliminarProductosAdquiridos(num_opcion);
                 break;
 
 
             case 2:
-                eliminarProductosAdquiridos(productos,numeros,num_opcion);
+                eliminarProductosAdquiridos(num_opcion);
                 break;
 
 
             case 3:
-                eliminarProductosAdquiridos(productos,numeros,num_opcion);
+                eliminarProductosAdquiridos(num_opcion);
                 break;
 
 
             case 4:
-                eliminarProductosAdquiridos(productos,numeros,num_opcion);
+                eliminarProductosAdquiridos(num_opcion);
                 break;
 
             case 5:
@@ -58,7 +58,7 @@ void eliminar(char **matriz_productos, int *matriz_numeros){
 
 
 
-void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, int num_opcion){
+void eliminarProductosAdquiridos(int num_opcion){
     int cantidad;
     
 
@@ -71,7 +71,7 @@ void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, i
 
         system("clear");
 
-        eliminar(productos,numeros);
+        eliminar();
     }
     else{
         printf("\nIntroduce el número de carros que deseas eliminar del carrito: ");
@@ -87,7 +87,7 @@ void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, i
                 regresar(2);
             }
             else
-                eliminar(productos,numeros);
+                eliminar();
         }
         else
             error();
@@ -96,7 +96,7 @@ void eliminarProductosAdquiridos(char **matriz_productos, int *matriz_numeros, i
 
 
 
-void mostrarProductosAdquiridos(char **matriz_productos, int *matriz_numeros){
+void mostrarProductosAdquiridos(){
 
     printf("Si quieres regresar al menú introduce 5:");
 
@@ -109,7 +109,7 @@ void mostrarProductosAdquiridos(char **matriz_productos, int *matriz_numeros){
     //Imprime opcion,producto y en carro
 
     for (int i = 0; i < 5; i++)
-            printf("%5d %15s %15d\n\n",i,*(matriz_productos + i),*(matriz_numeros + (i+5)) );
+            printf("%5d %15s %15d\n\n",i,*(productos + i),*(numeros + (i+5) ) );
 
         
     printf("\n--------------------------------------------------------\n");
