@@ -32,6 +32,5 @@ int total = 0;
     void menu();
     void regresar(int);
     
-    
   
 #endif
